@@ -1,0 +1,29 @@
+import random
+
+print("Guess the number")
+print("The random number is between 0 and 1,000,000")
+
+number = random.randint(0, 1000000)
+counter = 1
+while True:
+  guess = int(input("What is your guess?: "))
+  if guess < 0:
+    print("Negative number entered. Exiting.")
+    exit()
+  if guess > 1000000:
+    print("Number over 1,000,000. Exiting")
+    break 
+  if guess < number:
+    print("too low")
+    counter += 1
+    continue
+  elif guess > number:
+    print("too high")
+    counter += 1
+    continue
+  elif guess == number:
+    print("Correct!, congratulations you got the number correct in", counter, 
+          "attempts")
+    break 
+  else:
+    print("number is between 0 and 1,000,000") 
